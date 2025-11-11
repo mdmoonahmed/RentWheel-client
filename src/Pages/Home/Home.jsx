@@ -2,17 +2,16 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import CarCard from "../../Components/CarCard";
 import HeroBanner from "./HeroBannner";
+import FeaturedCars from "./FeaturedCars";
 
 const Home = () => {
-  const cars = useLoaderData();
-  console.log(cars);
+  const latestCars = useLoaderData();
 
   return (
     <div className ="">
       <HeroBanner></HeroBanner>
-      {cars.map((car) => (
-        <CarCard key={car._id} car={car}></CarCard>
-      ))}
+      <FeaturedCars latestCars={latestCars}></FeaturedCars>
+      
     </div>
   );
 };

@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
             {
                path: '/',
                element: <Home></Home>,
-               loader: ()=> fetch('http://localhost:4000/cars')
+               loader: ()=> fetch('http://localhost:4000/latest-cars')
             },
             {
                path: '/add-car',

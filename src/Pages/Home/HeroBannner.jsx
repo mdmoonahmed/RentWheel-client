@@ -63,14 +63,13 @@ const HeroBanner = () => {
 
         <SwiperSlide>
           <div className="relative h-[50vh] md:h-[80vh] overflow-hidden">
-            {/* 🔹 Background Image */}
+          
             <img
               src="https://wallpapercave.com/wp/wp13335462.jpg"
               alt="car"
               className="absolute inset-0 w-full h-full object-cover z-0 animate-zoomBg"
             />
 
-            {/* 🔹 Overlay + Text */}
             <div className="absolute inset-0 z-10 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 heading-text">
                 Earn by Listing Your Car

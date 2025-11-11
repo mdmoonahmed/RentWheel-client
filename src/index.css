@@ -23,7 +23,7 @@
 .navbar .active {
   color: #ffffff;
   font-weight: bold;
-  border: 1px solid #CAC8C8FF;
+  /* border: 1px solid #CAC8C8FF; */
   border-radius: 20px;
   background: #F0B100;
 }
@@ -45,6 +45,6 @@
     100% { transform: scale(1.1); }
   }
   .animate-zoomBg {
-    animation: zoomBg 4s ease-in-out forwards;
+    animation: zoomBg 4s ease-in-out infinite alternate;
   }
 }
