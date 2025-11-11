@@ -19,8 +19,8 @@ const HeroBanner = () => {
               <img
               className="absolute inset-0 w-full h-full object-cover z-0 animate-zoomBg"
               src="https://wallpapercave.com/wp/wp4479757.jpg" alt="car" />
-            <div className="absolute inset-0 z-10 bg-black/40 flex flex-col justify-center items-center text-center text-white px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <div className="absolute inset-0 z-10 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 heading-text">
                 Find Your Perfect Ride
               </h1>
               <p className="text-lg md:text-xl mb-6">
@@ -44,8 +44,8 @@ const HeroBanner = () => {
               className="absolute inset-0 w-full h-full object-cover z-0 animate-zoomBg"
               src="https://wallpapercave.com/wp/wp13649620.jpg" />
             
-            <div className="absolute inset-0 z-10 bg-black/40 flex flex-col justify-center items-center text-center text-white px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <div className="absolute inset-0 z-10 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 heading-text">
                 Rent. Drive. Explore.
               </h1>
               <p className="text-lg md:text-xl mb-6">
@@ -71,8 +71,8 @@ const HeroBanner = () => {
             />
 
             {/* 🔹 Overlay + Text */}
-            <div className="absolute inset-0 z-10 bg-black/40 flex flex-col justify-center items-center text-center text-white px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <div className="absolute inset-0 z-10 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 heading-text">
                 Earn by Listing Your Car
               </h1>
               <p className="text-lg md:text-xl mb-6">
