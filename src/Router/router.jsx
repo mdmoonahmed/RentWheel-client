@@ -9,6 +9,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import CarDetails from "../Pages/CarDetails/CarDetails";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: "/browse-cars",
         element: <BrowseCar></BrowseCar>,
+        loader: () => fetch("http://localhost:4000/cars"),
+      },
+      {
+        path: "/car-details/:id",
+        element: <PrivateRoutes>
+             <CarDetails></CarDetails>
+        </PrivateRoutes>,
+         loader: () => fetch("http://localhost:4000/cars"),
       },
       {
         path: "/login",
