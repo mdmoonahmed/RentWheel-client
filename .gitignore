@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+car.json
 
 # Editor directories and files
 .vscode/*
