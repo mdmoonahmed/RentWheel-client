@@ -51,7 +51,7 @@ const CompareCars = () => {
         </p>
 
        
-        <div className="flex flex-row justify-center gap-6 mb-10">
+        <div className="flex flex-row justify-center gap-6 mb-0 md:mb-10">
           <select
             className="border bg-base-300 text-white border-gray-300 rounded-lg p-3 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-red-400"
             onChange={(e) => handleSelect(e.target.value, true)}
@@ -84,7 +84,7 @@ const CompareCars = () => {
           whileInView={{opacity:1, x:0 , scale: 1 }}
           viewport={{ once: true}}
           transition={{ duration: 0.5 , delay:   0.1}}
-          className="grid grid-cols-2 gap-5 md:gap-8 mt-10 text-left">
+          className="grid grid-cols-2 gap-5 md:gap-8 mt-5 md:mt-10 text-left">
             {[car1, car2].map((car, index) => (
               <div
                 key={index}
@@ -96,7 +96,7 @@ const CompareCars = () => {
                   className="w-full h-40 md:h-56 object-cover"
                 />
                 <div className="p-3 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 md:mb-2">
+                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 md:mb-2">
                     {car.carName}
                   </h3>
                   <p className="text-gray-500 text-sm md:text-[16px] mb-2">{car.category}</p>
