@@ -5,6 +5,7 @@ import HeroBanner from "./HeroBanner";
 import FeaturedCars from "./FeaturedCars";
 import WhyRentWithUs from "./WhyRentWithUs";
 import CompareCars from "./CompareCars";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   const latestCars = useLoaderData();
@@ -15,6 +16,7 @@ const Home = () => {
       <FeaturedCars latestCars={latestCars}></FeaturedCars>
       <WhyRentWithUs></WhyRentWithUs>
      <CompareCars></CompareCars>
+     <Testimonials></Testimonials>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const SlideContent = ({ slide, isActive }) => {
               words={slide.words}
               loop={1}
               cursor
-              cursorStyle= {<Car className="inline-block fill-orange-500 animate-bounce ml-2" size={60} />}
+              cursorStyle= {<Car className="inline-block fill-yellow-600 animate-bounce ml-2" size={60} />}
               typeSpeed={70}
               deleteSpeed={0}
               delaySpeed={1000}
