@@ -55,7 +55,7 @@ const CarDetails = () => {
           body: JSON.stringify({ status: "Unavailable" }),
         });
 
-        setCar({ ...car, status: "Unavailable" });
+        setCar({ ...car, status: "Booked" });
       } else {
         toast.error("Booking failed, please try again!");
       }
