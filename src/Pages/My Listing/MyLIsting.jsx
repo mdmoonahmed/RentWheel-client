@@ -3,30 +3,34 @@ import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { Pencil, Trash2, Car } from "lucide-react";
 import { AuthContext } from "../../Context/AuthContext";
+import UpdateCar from "../UpdateCar/UpdateCar";
 
 const MyListing = () => {
   const { user } = useContext(AuthContext);
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editingCar, setEditingCar] = useState(null);
 
-
-  useEffect(() => {
+  // ✅ Move this OUTSIDE useEffect
+  const fetchMyCars = async () => {
     if (!user?.email) return;
-    const fetchMyCars = async () => {
-      try {
-        const res = await fetch(`http://localhost:4000/my-cars?email=${user.email}`);
-        const data = await res.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching my cars:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    try {
+      const res = await fetch(`http://localhost:4000/my-cars?email=${user.email}`);
+      const data = await res.json();
+      setCars(data);
+    } catch (error) {
+      console.error("Error fetching my cars:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ✅ Now you can call it here
+  useEffect(() => {
     fetchMyCars();
   }, [user?.email]);
 
- 
+  // ✅ Delete function
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete this car?");
     if (!confirm) return;
@@ -57,7 +61,6 @@ const MyListing = () => {
         transition={{ duration: 0.6 }}
         className="max-w-6xl mx-auto bg-zinc-800/70 border border-zinc-700 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-yellow-500/10 p-6 md:p-8 transition-all"
       >
-     
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
           <div className="text-center sm:text-left mb-3 sm:mb-0">
             <h2 className="text-3xl font-bold text-white">
@@ -72,7 +75,6 @@ const MyListing = () => {
           </div>
         </div>
 
-      
         {loading ? (
           <p className="text-center text-gray-400 py-20">Loading your cars...</p>
         ) : cars.length === 0 ? (
@@ -121,6 +123,7 @@ const MyListing = () => {
                       {/* Update Button */}
                       <button
                         className="flex items-center gap-1 px-3 py-1 rounded-md bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-semibold transition"
+                        onClick={() => setEditingCar(car?._id)}
                       >
                         <Pencil size={16} />
                         Update
@@ -141,7 +144,17 @@ const MyListing = () => {
             </table>
           </div>
         )}
+
       </motion.div>
+
+       {/* ✅ Update Modal */}
+        {editingCar && (
+          <UpdateCar
+            carId={editingCar}
+            onClose={() => setEditingCar(null)}
+            onUpdated={fetchMyCars} // ✅ works now because it's defined outside useEffect
+          />
+        )}
     </section>
   );
 };
