@@ -47,7 +47,7 @@ const CarCard = ({car,index}) => {
                 </span>
                 <a
                   onClick={handleDetails}
-                  className="bg-yellow-500 hover:bg-yellow-400 text-black font-medium px-4 py-2 rounded-lg transition-all duration-200"
+                  className="bg-yellow-500 cursor-pointer hover:bg-yellow-400 text-black font-medium px-4 py-2 rounded-lg transition-all duration-200"
                 >
                   View Details
                 </a>

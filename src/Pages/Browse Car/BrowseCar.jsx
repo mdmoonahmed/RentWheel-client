@@ -8,7 +8,7 @@ const BrowseCar = () => {
   return (
     <section className="min-h-screen py-10 md:py-16 bg-linear-to-r from-black via-transparent to-black text-gray-200">
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-white heading-text">
           Browse <span className="text-yellow-500">Cars</span>
         </h2>
         <p className="text-gray-400 mt-2">Find the perfect ride for your journey</p>
